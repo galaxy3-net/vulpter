@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/8"
   #config.vm.box = "galaxy3/vulpter"
   #config.vm.box_version = "20200929.22.02"
-  config.vm.hostname = "vulpter"
+  config.vm.hostname = "vulpter-build"
   config.vbguest.auto_update = false
 
   #config.vm.network "private_network", ip: "10.55.55.8"
@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     # vb.memory = "1024" # 1Gb
     # vb.memory = "2048" # 2Gb
     # vb.memory = "4096" # 4Gb
-    vb.name = "Vulpter (CentOS)"
+    vb.name = "Vulpter-Build (CentOS)"
     vb.gui = true
     vb.cpus = "4"
     vb.memory = "4096"
@@ -39,16 +39,17 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
    config.vm.provision "shell", inline: <<-SHELL
-     dnf update -y
-     dnf install kernel-devel make gcc perl wget -y
+     #dnf update -y
+     #dnf install kernel-devel make gcc perl wget -y
+     hostname
 
 
-     wget http://download.virtualbox.org/virtualbox/6.1.10/VBoxGuestAdditions_6.1.10.iso
-     sudo mkdir /media/VBoxGuestAdditions
-     sudo mount -o loop,ro VBoxGuestAdditions_6.1.10.iso /media/VBoxGuestAdditions
-     sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
-     rm VBoxGuestAdditions_6.1.10.iso
-     sudo umount /media/VBoxGuestAdditions
-     sudo rmdir /media/VBoxGuestAdditions
+     #wget http://download.virtualbox.org/virtualbox/6.1.10/VBoxGuestAdditions_6.1.10.iso
+     #sudo mkdir /media/VBoxGuestAdditions
+     #sudo mount -o loop,ro VBoxGuestAdditions_6.1.10.iso /media/VBoxGuestAdditions
+     #sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
+     #rm VBoxGuestAdditions_6.1.10.iso
+     #sudo umount /media/VBoxGuestAdditions
+     #sudo rmdir /media/VBoxGuestAdditions
 SHELL
 end
