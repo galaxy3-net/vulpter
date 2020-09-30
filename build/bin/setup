@@ -6,6 +6,8 @@ wget --no-check-certificate \
 
 cat ~vagrant/.ssh/authorized_keys.1 >> ~vagrant/.ssh/authorized_keys
 
-sudo (dd if=/dev/zero of=/empty bs=1M || rm /empty)
+df -h /
+sudo dd if=/dev/zero of=/empty bs=1M || sudo rm /empty
+df -h /
 
 echo 'vagrant package --base "Vulpter (CentOS)"'
