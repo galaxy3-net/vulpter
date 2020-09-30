@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  #config.vm.box = "centos/8"
-  config.vm.box = "galaxy3/vulpter"
+  config.vm.box = "centos/8"
+  #config.vm.box = "galaxy3/vulpter"
   config.vm.hostname = "vulpter"
   config.vbguest.auto_update = false
 
