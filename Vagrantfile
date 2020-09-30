@@ -35,3 +35,4 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
     #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
+end
