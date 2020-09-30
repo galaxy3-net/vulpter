@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "vulpter"
   config.vbguest.auto_update = false
 
-  #config.vm.network "private_network", ip: "10.55.55.8"
+  config.vm.network "private_network", ip: "10.55.55.8"
 
   #config.vm.synced_folder	"../../",	"/vagrant", owner: "2001", group: "2001"
   #config.vm.synced_folder "~/repos/uci", "/repos", owner: "2001", group: "2001", create: true
