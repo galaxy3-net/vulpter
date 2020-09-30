@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  #config.vm.box = "centos/8"
-  config.vm.box = "galaxy3/vulpter"
+  config.vm.box = "centos/8"
+  #config.vm.box = "galaxy3/vulpter"
   config.vm.hostname = "vulpter"
   config.vbguest.auto_update = false
 
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
     # vb.memory = "1024" # 1Gb
     # vb.memory = "2048" # 2Gb
     # vb.memory = "4096" # 4Gb
-    vb.name = "vulpter"
+    vb.name = "Vulpter (CentOS)"
     vb.gui = true
     vb.cpus = "4"
     vb.memory = "4096"
