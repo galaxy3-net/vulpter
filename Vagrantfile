@@ -4,6 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/8"
   config.vm.hostname = "centosbox"
+  config.vbguest.auto_update = false
 
   #config.vm.network "private_network", ip: "10.55.55.8"
 
