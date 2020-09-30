@@ -1,0 +1,22 @@
+---
+configs:
+  use: 'home'
+  dev:
+    public_ip: '192.168.2.118'
+
+  thedr:
+    private_ip: 10.55.55.8
+    virtualbox:
+      cpus: 4
+      memory: 4096
+    description: |
+      Vulpter (centosbox)
+      =====================================================
+                                                          =
+      This VM was included in the G3 lab for convenience.
+                              =
+      =========
+      Accounts:
+          Vagrant: vagrant / vagrant
+          Admin:   admin / cybersecurity
+                             =
