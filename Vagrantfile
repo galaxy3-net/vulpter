@@ -3,15 +3,15 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/8"
-  config.vm.hostname = "centosbox"
+  config.vm.hostname = "vulpter"
   config.vbguest.auto_update = false
 
   #config.vm.network "private_network", ip: "10.55.55.8"
 
-  #config.vm.synced_folder	"../../",	"/vagrant", owner: "2001", group: "2001"
-  #config.vm.synced_folder "~/repos/uci", "/repos", owner: "2001", group: "2001", create: true
-  #config.vm.synced_folder "../../Downloads", "/Downloads", owner: "2001", group: "2001", create: true
-  #config.vm.synced_folder "../../log/nakadia", "/var/log/", owner: "2001", group: "2001", create: true
+  config.vm.synced_folder	"../../",	"/vagrant", owner: "2001", group: "2001"
+  config.vm.synced_folder "~/repos/uci", "/repos", owner: "2001", group: "2001", create: true
+  config.vm.synced_folder "../../Downloads", "/Downloads", owner: "2001", group: "2001", create: true
+  config.vm.synced_folder "../../log/nakadia", "/var/log/", owner: "2001", group: "2001", create: true
 
 # config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1", auto_correct: true
   config.vm.network "forwarded_port", guest: 3389, host: 3389, host_ip: "127.0.0.1", auto_correct: true
