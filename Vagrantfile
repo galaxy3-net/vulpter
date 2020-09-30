@@ -35,4 +35,15 @@ Vagrant.configure("2") do |config|
     #vb.customize ['modifyvm', :id, '--firmware', 'efi64']
     #vb.customize ['modifyvm', :id, '--nictype1', 'virtio']
   end
+     config.vm.provision "shell", inline: <<-SHELL
+     yum -y install kernel-devel gcc make perl
+     yum -y clean all
+     wget http://download.virtualbox.org/virtualbox/5.0.12/VBoxGuestAdditions_5.0.12.iso
+     sudo mkdir /media/VBoxGuestAdditions
+     sudo mount -o loop,ro VBoxGuestAdditions_5.0.12.iso /media/VBoxGuestAdditions
+     sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
+     rm VBoxGuestAdditions_5.0.12.iso
+     sudo umount /media/VBoxGuestAdditions
+     sudo rmdir /media/VBoxGuestAdditions
+SHELL
 end
