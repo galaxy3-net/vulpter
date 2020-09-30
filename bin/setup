@@ -1,0 +1,11 @@
+#!/bin/bash
+
+wget --no-check-certificate \
+          https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub \
+          -O ~vagrant/.ssh/authorized_keys.1
+
+cat ~vagrant/.ssh/authorized_keys.1 >> ~vagrant/.ssh/authorized_keys
+
+sudo (dd if=/dev/zero of=/empty bs=1M || rm /empty)
+
+echo 'vagrant package --base "Vulpter (CentOS)"'
