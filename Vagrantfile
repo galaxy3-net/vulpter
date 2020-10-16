@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   #config.vm.box = "galaxy3/vulpter"
   #config.vm.box_version = "20200930.09.51"
   config.vm.hostname = "vulpter"
-  #config.vbguest.auto_update = false
+  config.vbguest.auto_update = false
 
   config.vm.network "private_network", ip: "10.55.55.8"
 
