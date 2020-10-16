@@ -43,4 +43,7 @@ Vagrant.configure("2") do |config|
    sudo dnf install python3 -y
    su - vagrant -c "python3 -m pip install --user ansible"
 SHELL
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
 end
