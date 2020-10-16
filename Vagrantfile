@@ -41,6 +41,6 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
    hostname
    sudo dnf install python3 -y
-   python3 -m pip install --user ansible
+   su - vagrant -c "python3 -m pip install --user ansible"
 SHELL
 end
