@@ -11,3 +11,4 @@
         path: /var/dropwizard-rest-stub/
         state: directory
         force: true
+      become: yes
