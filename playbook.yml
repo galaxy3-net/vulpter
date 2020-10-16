@@ -1,0 +1,12 @@
+---
+
+- name: Deploy 'dropwizard-rest-stub'
+  hosts: all
+  vars:
+    service_file: /etc/init.d/dropwizard
+  tasks:
+
+    - name: Create folders
+      file:
+        path: /var/dropwizard-rest-stub/logs
+        state: directory
