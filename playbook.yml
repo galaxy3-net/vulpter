@@ -8,6 +8,6 @@
 
     - name: Create folders
       file:
-        path: /var/dropwizard-rest-stub/logs
+        path: /var/dropwizard-rest-stub/
         state: directory
         force: true
