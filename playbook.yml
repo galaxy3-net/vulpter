@@ -10,3 +10,4 @@
       file:
         path: /var/dropwizard-rest-stub/logs
         state: directory
+        force: true
